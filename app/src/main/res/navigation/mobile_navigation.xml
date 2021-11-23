@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.lnm011223.foods_secret.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+
+    <fragment
+        android:id="@+id/nav_search"
+        android:name="com.lnm011223.foods_secret.ui.search.SearchFragment"
+        android:label="@string/search_title"
+        tools:layout="@layout/search_fragment" />
+    <fragment
+        android:id="@+id/nav_select"
+        android:name="com.lnm011223.foods_secret.ui.select.SelectFragment"
+        android:label="@string/select_title"
+        tools:layout="@layout/select_fragment" />
+    <fragment
+        android:id="@+id/nav_tag"
+        android:name="com.lnm011223.foods_secret.ui.tag.TagFragment"
+        android:label="@string/tag_title"
+        tools:layout="@layout/tag_fragment" />
+    <fragment
+        android:id="@+id/nav_about"
+        android:name="com.lnm011223.foods_secret.ui.about.AboutFragment"
+        android:label="@string/about_title"
+        tools:layout="@layout/about_fragment" />
+</navigation>
