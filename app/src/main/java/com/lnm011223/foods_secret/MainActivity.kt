@@ -1,7 +1,9 @@
 package com.lnm011223.foods_secret
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.Menu
+import android.widget.Toolbar
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
@@ -42,6 +44,8 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+        binding.appBarMain.toolbar.setBackgroundColor(Color.parseColor("#0084f4"))
+        window.statusBarColor = Color.parseColor("#0084f4")
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -55,3 +59,5 @@ class MainActivity : AppCompatActivity() {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 }
+
+

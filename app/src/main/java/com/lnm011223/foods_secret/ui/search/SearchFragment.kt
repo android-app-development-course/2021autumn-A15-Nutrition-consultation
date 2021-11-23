@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toolbar
+import androidx.navigation.ui.AppBarConfiguration
 import com.lnm011223.foods_secret.R
 import com.lnm011223.foods_secret.databinding.FragmentGalleryBinding
 import com.lnm011223.foods_secret.databinding.SearchFragmentBinding
@@ -33,6 +35,8 @@ class SearchFragment : Fragment() {
 
 
         return root
+
+
     }
 
     override fun onDestroyView() {
