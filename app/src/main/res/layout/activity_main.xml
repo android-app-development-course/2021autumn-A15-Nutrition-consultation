@@ -15,11 +15,18 @@
         android:layout_height="match_parent" />
 
     <com.google.android.material.navigation.NavigationView
+        android:clickable="true"
+        app:insetForeground="@android:color/transparent"
+        app:itemIconTint="@drawable/color_set"
+
+        app:itemTextColor="@drawable/color_set"
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:fitsSystemWindows="true"
+        app:theme="@style/ThemeOverlay.AppCompat.navTheme"
+
         app:headerLayout="@layout/nav_header_main"
-        app:menu="@menu/activity_main_drawer" />
+        app:menu="@menu/activity_main_drawer"
+        android:focusable="true" />
 </androidx.drawerlayout.widget.DrawerLayout>

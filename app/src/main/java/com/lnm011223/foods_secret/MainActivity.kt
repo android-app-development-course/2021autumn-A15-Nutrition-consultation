@@ -1,8 +1,10 @@
 package com.lnm011223.foods_secret
 
 import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
 import android.view.Menu
+import android.view.WindowManager
 import android.widget.Toolbar
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
@@ -43,10 +45,12 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
 
 
+
         navController.addOnDestinationChangedListener { _, destination, _ ->
             if (destination.id == R.id.nav_home) {
                 binding.appBarMain.toolbar.setBackgroundColor(Color.parseColor("#00c48c"))
                 window.statusBarColor = Color.parseColor("#00c48c")
+                
             }
             if (destination.id == R.id.nav_search) {
                 binding.appBarMain.toolbar.setBackgroundColor(Color.parseColor("#0084f4"))
