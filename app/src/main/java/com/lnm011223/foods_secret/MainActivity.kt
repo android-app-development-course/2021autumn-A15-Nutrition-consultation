@@ -28,10 +28,7 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.appBarMain.toolbar)
 
-        binding.appBarMain.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
+
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_content_main)
@@ -39,13 +36,38 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_search,R.id.nav_select,R.id.nav_tag,R.id.nav_about
+                R.id.nav_home, R.id.nav_search, R.id.nav_select, R.id.nav_tag, R.id.nav_about
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
-        binding.appBarMain.toolbar.setBackgroundColor(Color.parseColor("#0084f4"))
-        window.statusBarColor = Color.parseColor("#0084f4")
+
+
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            if (destination.id == R.id.nav_home) {
+                binding.appBarMain.toolbar.setBackgroundColor(Color.parseColor("#00c48c"))
+                window.statusBarColor = Color.parseColor("#00c48c")
+            }
+            if (destination.id == R.id.nav_search) {
+                binding.appBarMain.toolbar.setBackgroundColor(Color.parseColor("#0084f4"))
+                window.statusBarColor = Color.parseColor("#0084f4")
+            }
+            if (destination.id == R.id.nav_select) {
+                binding.appBarMain.toolbar.setBackgroundColor(Color.parseColor("#EB8C8F"))
+                window.statusBarColor = Color.parseColor("#EB8C8F")
+            }
+            if (destination.id == R.id.nav_tag) {
+                binding.appBarMain.toolbar.setBackgroundColor(Color.parseColor("#2573f9"))
+                window.statusBarColor = Color.parseColor("#2573f9")
+            }
+            if (destination.id == R.id.nav_about) {
+                binding.appBarMain.toolbar.setBackgroundColor(Color.parseColor("#ffa26b"))
+                window.statusBarColor = Color.parseColor("#ffa26b")
+            }
+
+
+
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

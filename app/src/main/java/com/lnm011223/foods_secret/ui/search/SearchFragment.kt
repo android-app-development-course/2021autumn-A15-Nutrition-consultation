@@ -10,9 +10,9 @@ import android.widget.TextView
 import android.widget.Toolbar
 import androidx.navigation.ui.AppBarConfiguration
 import com.lnm011223.foods_secret.R
-import com.lnm011223.foods_secret.databinding.FragmentGalleryBinding
+
 import com.lnm011223.foods_secret.databinding.SearchFragmentBinding
-import com.lnm011223.foods_secret.ui.gallery.GalleryViewModel
+
 
 class SearchFragment : Fragment() {
     private lateinit var searchViewModel: SearchViewModel
