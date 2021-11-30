@@ -4,6 +4,7 @@ import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.view.Menu
+import android.view.View
 import android.view.WindowManager
 import android.widget.Toolbar
 import com.google.android.material.snackbar.Snackbar
@@ -16,6 +17,12 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.lnm011223.foods_secret.databinding.ActivityMainBinding
+import androidx.annotation.NonNull
+
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout.DrawerListener
+import androidx.navigation.NavController
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -44,34 +51,35 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-
-
-        navController.addOnDestinationChangedListener { _, destination, _ ->
-            if (destination.id == R.id.nav_home) {
-                binding.appBarMain.toolbar.setBackgroundColor(Color.parseColor("#00c48c"))
-                window.statusBarColor = Color.parseColor("#00c48c")
-                
-            }
-            if (destination.id == R.id.nav_search) {
-                binding.appBarMain.toolbar.setBackgroundColor(Color.parseColor("#0084f4"))
-                window.statusBarColor = Color.parseColor("#0084f4")
-            }
-            if (destination.id == R.id.nav_select) {
-                binding.appBarMain.toolbar.setBackgroundColor(Color.parseColor("#EB8C8F"))
-                window.statusBarColor = Color.parseColor("#EB8C8F")
-            }
-            if (destination.id == R.id.nav_tag) {
-                binding.appBarMain.toolbar.setBackgroundColor(Color.parseColor("#2573f9"))
-                window.statusBarColor = Color.parseColor("#2573f9")
-            }
-            if (destination.id == R.id.nav_about) {
-                binding.appBarMain.toolbar.setBackgroundColor(Color.parseColor("#ffa26b"))
-                window.statusBarColor = Color.parseColor("#ffa26b")
-            }
+        appbarcolor(navController)
 
 
 
-        }
+
+        drawerLayout.addDrawerListener(object : DrawerListener {
+            override fun onDrawerSlide(drawerView: View, slideOffset: Float) {
+                //抽屉正在滑动时调用
+                if (drawerLayout.isDrawerVisible(GravityCompat.START)) {
+                    //部分可见就会进入
+                    window.statusBarColor = Color.TRANSPARENT
+                }
+                else{
+                    appbarcolor(navController)
+                }
+            }
+
+            override fun onDrawerOpened(drawerView: View) {
+                //抽屉完全打开后调用
+
+            }
+
+            override fun onDrawerClosed(drawerView: View) {
+
+            }
+
+            override fun onDrawerStateChanged(newState: Int) {}
+        })
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -84,6 +92,23 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
+    fun appbarcolor(navController:NavController){//用于改变actionbar和statusbar颜色
+        navController.addOnDestinationChangedListener { _, destination, _ -> when(destination.id){
+            R.id.nav_home -> {binding.appBarMain.toolbar.setBackgroundColor(Color.parseColor("#00c48c"))
+                window.statusBarColor = Color.parseColor("#00c48c")}
+            R.id.nav_search -> {binding.appBarMain.toolbar.setBackgroundColor(Color.parseColor("#0084f4"))
+                    window.statusBarColor = Color.parseColor("#0084f4")}
+            R.id.nav_select -> {binding.appBarMain.toolbar.setBackgroundColor(Color.parseColor("#EB8C8F"))
+                    window.statusBarColor = Color.parseColor("#EB8C8F")}
+            R.id.nav_tag -> {binding.appBarMain.toolbar.setBackgroundColor(Color.parseColor("#ECCE5F"))
+                    window.statusBarColor = Color.parseColor("#ECCE5F")}
+            R.id.nav_about -> {binding.appBarMain.toolbar.setBackgroundColor(Color.parseColor("#ffa26b"))
+                    window.statusBarColor = Color.parseColor("#ffa26b")}
+        }
+
+        }
+    }
+
 }
 
 
