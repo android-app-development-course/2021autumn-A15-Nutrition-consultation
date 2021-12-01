@@ -1,4 +1,4 @@
-package com.lnm011223.foods_secret.ui.tag
+package com.lnm011223.foods_secret.ui.detail
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -6,32 +6,36 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.Navigation
 import com.lnm011223.foods_secret.R
-import com.lnm011223.foods_secret.databinding.TagFragmentBinding
+import com.lnm011223.foods_secret.databinding.DetailFragmentBinding
+import com.lnm011223.foods_secret.databinding.FragmentHomeBinding
+import com.lnm011223.foods_secret.ui.home.HomeViewModel
 
-class TagFragment : Fragment() {
+class DetailFragment : Fragment() {
 
-    private lateinit var tagViewModel: TagViewModel
-    private var _binding: TagFragmentBinding? = null
+    private lateinit var detailViewModel: DetailViewModel
+    private var _binding: DetailFragmentBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
 
-
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        tagViewModel =
-            ViewModelProvider(this).get(TagViewModel::class.java)
+        detailViewModel =
+            ViewModelProvider(this).get(DetailViewModel::class.java)
 
-        _binding = TagFragmentBinding.inflate(inflater, container, false)
+        _binding = DetailFragmentBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
 
         return root
+
+
+
     }
 
     override fun onDestroyView() {
@@ -41,6 +45,8 @@ class TagFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        binding.card.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.nav_detail, null))
+
+
     }
+
 }

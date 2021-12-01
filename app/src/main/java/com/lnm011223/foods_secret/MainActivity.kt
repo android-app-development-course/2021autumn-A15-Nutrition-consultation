@@ -20,6 +20,7 @@ import com.lnm011223.foods_secret.databinding.ActivityMainBinding
 import androidx.annotation.NonNull
 
 import androidx.core.view.GravityCompat
+import androidx.core.view.WindowCompat
 import androidx.drawerlayout.widget.DrawerLayout.DrawerListener
 import androidx.navigation.NavController
 
@@ -52,6 +53,12 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
 
         appbarcolor(navController)
+        val insetsController = WindowCompat.getInsetsController(
+            window, window.decorView
+        )
+        window.navigationBarColor = Color.WHITE
+        insetsController?.apply { isAppearanceLightNavigationBars = true }
+
 
 
 
@@ -70,6 +77,7 @@ class MainActivity : AppCompatActivity() {
 
             override fun onDrawerOpened(drawerView: View) {
                 //抽屉完全打开后调用
+
 
             }
 

@@ -16,22 +16,44 @@
         android:id="@+id/nav_search"
         android:name="com.lnm011223.foods_secret.ui.search.SearchFragment"
         android:label="@string/search_title"
-        tools:layout="@layout/search_fragment" />
+        tools:layout="@layout/search_fragment" >
+        <action
+            android:id="@+id/action_nav_search_to_nav_select2"
+            app:destination="@id/nav_select" />
+    </fragment>
     <fragment
         android:id="@+id/nav_select"
         android:name="com.lnm011223.foods_secret.ui.select.SelectFragment"
         android:label="@string/select_title"
-        tools:layout="@layout/select_fragment" />
+        tools:layout="@layout/select_fragment" >
+        <action
+            android:id="@+id/action_nav_select_to_nav_analyse"
+            app:destination="@id/nav_analyse" />
+    </fragment>
     <fragment
         android:id="@+id/nav_tag"
         android:name="com.lnm011223.foods_secret.ui.tag.TagFragment"
         android:label="@string/tag_title"
-        tools:layout="@layout/tag_fragment" />
+        tools:layout="@layout/tag_fragment" >
+        <action
+            android:id="@+id/action_nav_tag_to_nav_detail"
+            app:destination="@id/nav_detail" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_about"
         android:name="com.lnm011223.foods_secret.ui.about.AboutFragment"
         android:label="@string/about_title"
         tools:layout="@layout/about_fragment" />
+    <fragment
+        android:id="@+id/nav_detail"
+        android:name="com.lnm011223.foods_secret.ui.detail.DetailFragment"
+        android:label="分类详情"
+        tools:layout="@layout/detail_fragment" />
+    <fragment
+        android:id="@+id/nav_analyse"
+        android:name="com.lnm011223.foods_secret.ui.analyse.AnalyseFragment"
+        android:label="分析结果"
+        tools:layout="@layout/analyse_fragment" />
 
 </navigation>

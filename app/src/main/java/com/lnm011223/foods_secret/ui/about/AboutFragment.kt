@@ -40,4 +40,9 @@ class AboutFragment : Fragment() {
         _binding = null
     }
 
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        binding.githubUrl.text = "Github项目地址：\n"+"https://github.com/android-app-development-course/2021autumn-A15-Nutrition-consultation"
+        binding.groupName.text = "2021autumn-A15"+"小组成员:\n\n"+"陈霖：\n\n"+"梁诺明：\n\n"+"黄景泰：\n\n"+"钱伯韬：\n\n"
+    }
 }

@@ -1,6 +1,9 @@
 package com.lnm011223.foods_secret.ui.home
 
 import android.os.Bundle
+import android.text.Html
+import android.text.Html.fromHtml
+import android.text.method.ScrollingMovementMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -31,16 +34,29 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
+
         return root
+
+
 
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        val news = "1.输入食物名称查询食物的营养信息\n" +
+                "\n" +
+                "2.选择食物分类查看该分类下的食物数据\n" +
+                "\n" +
+                "3.选择食物搭配查看营养是否均衡"
+        binding.homeText.apply {
+            maxLines = 5
+            text = news
+        }
+
     }
 }
