@@ -37,7 +37,8 @@
         tools:layout="@layout/tag_fragment" >
         <action
             android:id="@+id/action_nav_tag_to_nav_detail"
-            app:destination="@id/nav_detail" />
+            app:destination="@id/nav_detail"
+            app:enterAnim="@anim/card_in" />
     </fragment>
 
     <fragment

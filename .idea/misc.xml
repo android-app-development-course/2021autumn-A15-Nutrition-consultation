@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.21302083333333333" />
         <entry key="app/src/main/res/drawable/button_drawable.xml" value="0.21302083333333333" />
         <entry key="app/src/main/res/drawable/color_set.xml" value="0.21302083333333333" />
         <entry key="app/src/main/res/drawable/ic_fluenthome16filled.xml" value="0.3374358974358974" />
@@ -10,6 +11,7 @@
         <entry key="app/src/main/res/drawable/ic_fluentsearch16filled.xml" value="0.3374358974358974" />
         <entry key="app/src/main/res/drawable/ic_fluentselectall24filled.xml" value="0.3374358974358974" />
         <entry key="app/src/main/res/drawable/ic_fluenttagmultiple16filled.xml" value="0.3374358974358974" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.21302083333333333" />
         <entry key="app/src/main/res/drawable/ic_menu_camera.xml" value="0.3374358974358974" />
         <entry key="app/src/main/res/drawable/ic_menu_gallery.xml" value="0.3374358974358974" />
         <entry key="app/src/main/res/drawable/ic_undraw_file_searching_re_3evy.xml" value="0.2755208333333333" />
@@ -23,12 +25,15 @@
         <entry key="app/src/main/res/layout/detail_fragment.xml" value="0.259375" />
         <entry key="app/src/main/res/layout/fragment_gallery.xml" value="0.1793478260869565" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.19978858350951373" />
+        <entry key="app/src/main/res/layout/fruit_item.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/nav_header_main.xml" value="0.15881458966565348" />
         <entry key="app/src/main/res/layout/search_fragment.xml" value="0.375" />
         <entry key="app/src/main/res/layout/select_fragment.xml" value="0.259375" />
         <entry key="app/src/main/res/layout/tag_fragment.xml" value="0.259375" />
         <entry key="app/src/main/res/menu/activity_main_drawer.xml" value="0.32153846153846155" />
         <entry key="app/src/main/res/menu/main.xml" value="0.3265625" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.21302083333333333" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.21302083333333333" />
       </map>
     </option>
   </component>

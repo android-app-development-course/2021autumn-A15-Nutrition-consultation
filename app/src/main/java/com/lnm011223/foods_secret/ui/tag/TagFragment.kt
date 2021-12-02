@@ -41,6 +41,6 @@ class TagFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        binding.card.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.nav_detail, null))
+        binding.card3.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.nav_detail, null))
     }
 }
