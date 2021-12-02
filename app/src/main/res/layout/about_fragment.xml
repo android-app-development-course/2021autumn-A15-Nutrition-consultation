@@ -37,27 +37,28 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="5dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="28dp"
-                android:layout_marginTop="32dp"
+                android:id="@+id/imageView7"
+                android:layout_width="150dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="16dp"
                 android:background="@drawable/button_drawable"
                 android:backgroundTint="#ffa26b"
+                app:layout_constraintEnd_toEndOf="parent"
+
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
             <TextView
                 android:id="@+id/github_url"
                 android:layout_width="312dp"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                android:maxLines="2"
+                android:maxLines="4"
                 android:paddingStart="5dp"
-                android:paddingTop="10dp"
+                android:paddingTop="5dp"
+
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.144"
-                app:layout_constraintStart_toEndOf="@+id/imageView4"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
 
@@ -77,30 +78,43 @@
             android:layout_height="match_parent"
             >
 
-            <ImageView
-
-                android:id="@+id/imageView6"
-                android:layout_width="5dp"
-                android:layout_height="200dp"
-                android:layout_marginStart="28dp"
-                android:layout_marginTop="24dp"
-                android:background="@drawable/button_drawable"
-                android:backgroundTint="#ffa26b"
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="小组成员"
+                android:textColor="#ffa26b"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="150dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/button_drawable"
+                android:backgroundTint="#ffa26b"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
             <TextView
                 android:id="@+id/group_name"
                 android:layout_width="312dp"
                 android:layout_height="200dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="40dp"
                 android:maxLines="10"
                 android:paddingStart="5dp"
                 android:paddingTop="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.148"
                 app:layout_constraintStart_toEndOf="@+id/imageView6"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
