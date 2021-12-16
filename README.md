@@ -1,6 +1,13 @@
-# 2021autumn-A15-Nutrition-consultation
+# Food's Secret
 
-营养健康咨询平台
+## 线框图
 
-有待更新
+![image-20211202201155993](https://gitee.com/lnm011223/lnm011223-picture/raw/master/uPic/image-20211202201155993.png)
 
+## 主要配色
+
+![image-20211202202350653](https://gitee.com/lnm011223/lnm011223-picture/raw/master/uPic/image-20211202202350653.png)
+
+## 界面展示
+
+![Ui](https://gitee.com/lnm011223/lnm011223-picture/raw/master/uPic/Ui.png)
