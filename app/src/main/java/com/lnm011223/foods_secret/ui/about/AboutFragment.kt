@@ -1,15 +1,12 @@
 package com.lnm011223.foods_secret.ui.about
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.lnm011223.foods_secret.R
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.lnm011223.foods_secret.databinding.AboutFragmentBinding
-import com.lnm011223.foods_secret.databinding.SearchFragmentBinding
-import com.lnm011223.foods_secret.ui.search.SearchViewModel
 
 class AboutFragment : Fragment() {
 

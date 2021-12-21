@@ -1,5 +1,6 @@
 package com.lnm011223.foods_secret
 
+import android.content.Context
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
@@ -30,9 +31,15 @@ class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
 
+    // 用于全局获取这个Activity
+    companion object {
+        const val KEY = "6c658c0160d42b5f5e4807a3dadfee91"; // 请求api需要携带的参数
+        lateinit var context:Context
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        context = applicationContext
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 

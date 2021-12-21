@@ -19,12 +19,14 @@ import androidx.transition.Visibility
 import com.lnm011223.foods_secret.R
 
 import com.lnm011223.foods_secret.databinding.SearchFragmentBinding
+import com.lnm011223.foods_secret.ui.food.FoodViewModel
 import com.lnm011223.foods_secret.ui.select.SelectFragment
 import kotlinx.android.synthetic.main.search_fragment.*
 
 
 class SearchFragment : Fragment() {
-    private lateinit var searchViewModel: SearchViewModel
+
+    private lateinit var foodViewModel: FoodViewModel
     private var _binding: SearchFragmentBinding? = null
 
     // This property is only valid between onCreateView and
@@ -37,16 +39,14 @@ class SearchFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        searchViewModel =
-            ViewModelProvider(this).get(SearchViewModel::class.java)
+        foodViewModel =
+            ViewModelProvider(this).get(FoodViewModel::class.java)
 
         _binding = SearchFragmentBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
 
         return root
-
-
 
     }
 
