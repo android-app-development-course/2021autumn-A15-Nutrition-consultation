@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory
  */
 object ServiceCreator {
     // api地址
-    private const val BASE_URL = "http://api.tianapi.com/nutrient/index";
+    private const val BASE_URL = "https://api.tianapi.com/";
 
     private val retrofit = Retrofit.Builder()
         .baseUrl(BASE_URL)

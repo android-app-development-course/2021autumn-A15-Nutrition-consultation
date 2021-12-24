@@ -15,13 +15,13 @@ import com.google.gson.annotations.SerializedName
  *     { }
  *  }
  */
-data class FoodResponse(val code:String, val FoodInfoList:List<Food>)
+data class FoodResponse(val code:String, @SerializedName("newslist")val FoodInfoList:List<Food>)
 
 /**
  * 食物信息(部分)
  */
-data class Food(val name:String,
-                @SerializedName("rl")val power:Int,
-                @SerializedName("dbz")val protein:Int,
-                @SerializedName("zf")val fat:Float) {
+data class Food(val name:String="",
+                @SerializedName("rl")val power:Int=0,
+                @SerializedName("dbz")val protein:Float=0.0F,
+                @SerializedName("zf")val fat:Float=0.0F) {
 }

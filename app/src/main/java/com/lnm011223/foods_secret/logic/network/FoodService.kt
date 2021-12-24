@@ -18,13 +18,13 @@ interface FoodService {
      * @param num ：返回数量（最大20）
      * @param page：分页
      */
-    @GET("?key=${MainActivity.KEY}&mode=1")
+    @GET("nutrient/index?key=${MainActivity.KEY}&mode=1")
     fun searchFoods(@Query("word")foodCategoryName:String, num:Int=8, page:Int=1) :Call<FoodResponse>
 
     /**
      * 根据食物名称获取食物信息
      * @param foodName：食物名称
      */
-    @GET("?key=${MainActivity.KEY}&mode=0&num=1")
+    @GET("nutrient/index?key=${MainActivity.KEY}&mode=0&num=1")
     fun getSearchInfo(@Query("word")foodName:String):Call<FoodResponse>
 }

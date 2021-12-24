@@ -1,5 +1,6 @@
 package com.lnm011223.foods_secret.logic.network
 
+import android.util.Log
 import androidx.lifecycle.liveData
 import com.lnm011223.foods_secret.logic.model.Food
 import kotlinx.coroutines.Dispatchers
@@ -26,14 +27,18 @@ object Repository {
 
     fun getFoodInfo(foodName: String) = liveData(Dispatchers.IO) {
         val result = try {
-            val foodResponse = FoodSecretNetwork.searchFoods(foodName)
+            val foodResponse = FoodSecretNetwork.getFoodInfo(foodName)
             if (foodResponse.code == "200") {
-                val food = foodResponse.FoodInfoList[0]
-                Result.success(food)
+                if (foodResponse.FoodInfoList.isNotEmpty()) {
+                    Result.success(foodResponse.FoodInfoList[0])
+                } else {
+                    Result.success(Food())
+                }
             } else {
                 Result.failure(RuntimeException("response status is ${foodResponse.code}"))
             }
         } catch (e: Exception) {
+            e.printStackTrace()
             Result.failure<Food>(e)
         }
         emit(result)
