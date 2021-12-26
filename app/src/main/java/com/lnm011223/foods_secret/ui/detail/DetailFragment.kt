@@ -31,8 +31,6 @@ class DetailFragment : Fragment() {
 
         _binding = DetailFragmentBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
-
         return root
     }
 
@@ -64,6 +62,7 @@ class DetailFragment : Fragment() {
                 adapter.notifyDataSetChanged()
             }
         })
+
     }
 //    private fun initFruits() {
 //        repeat(2) {

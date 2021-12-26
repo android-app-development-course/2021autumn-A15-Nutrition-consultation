@@ -1,11 +1,14 @@
 package com.lnm011223.foods_secret
 
+import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import android.view.LayoutInflater
 import com.lnm011223.foods_secret.logic.model.Food
 
 class FoodAdapter(val foodList: List<Food>) : RecyclerView.Adapter<FoodAdapter.ViewHolder>() {
@@ -17,7 +20,10 @@ class FoodAdapter(val foodList: List<Food>) : RecyclerView.Adapter<FoodAdapter.V
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.fruit_item, parent, false)
-        return ViewHolder(view)
+        val viewHolder = ViewHolder(view)
+
+
+        return viewHolder
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -25,6 +31,14 @@ class FoodAdapter(val foodList: List<Food>) : RecyclerView.Adapter<FoodAdapter.V
         // 使用默认图片
         holder.fruitImage.setImageResource(R.drawable.apple_pic)
         holder.foodName.text = food.name
+        holder.itemView.setOnClickListener {
+
+            val bundle = Bundle()
+            bundle.putString("foodName",food.name)
+//            Toast.makeText(holder.itemView.context,"点击了${food.name}",Toast.LENGTH_SHORT).show()
+            holder.itemView.findNavController().navigate(R.id.nav_search, bundle)
+        }
+
     }
 
     override fun getItemCount() = foodList.size

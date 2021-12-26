@@ -50,7 +50,14 @@
         android:id="@+id/nav_detail"
         android:name="com.lnm011223.foods_secret.ui.detail.DetailFragment"
         android:label="分类详情"
-        tools:layout="@layout/detail_fragment" />
+        tools:layout="@layout/detail_fragment" >
+        <action
+            android:id="@+id/action_food_category_to_food_search"
+            app:destination="@+id/nav_search" />
+        <action
+            android:id="@+id/action_nav_detail_to_nav_search"
+            app:destination="@id/nav_search" />
+    </fragment>
     <fragment
         android:id="@+id/nav_analyse"
         android:name="com.lnm011223.foods_secret.ui.analyse.AnalyseFragment"
