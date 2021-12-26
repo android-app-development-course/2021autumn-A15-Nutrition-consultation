@@ -1,6 +1,8 @@
 package com.lnm011223.foods_secret.logic.model
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
 /**
  * api说明地址：https://www.tianapi.com/apiview/121
@@ -25,10 +27,33 @@ data class FoodResponse(val code:String, @SerializedName("newslist")val FoodInfo
  * @param fat 脂肪
  * @param diaryFiber 膳食纤维
  */
+@Parcelize
 data class Food(val name:String="",
                 @SerializedName("rl")val power:Float=0.0F,
                 @SerializedName("dbz")val protein:Float=0.0F,
                 @SerializedName("zf")val fat:Float=0.0F,
                 @SerializedName("shhf")val carbohydrate:Float=0.0F,
-                @SerializedName("ssxw")val diaryFiber:Float=0.0F) {
+                @SerializedName("ssxw")val diaryFiber:Float=0.0F):Parcelable {
+    override fun equals(other: Any?): Boolean {
+        if (other != null) {
+            return if (other::class.java == Food::class.java) {
+                val food = other as Food
+                (food.name == name && food.protein == protein && food.fat == fat
+                        && food.carbohydrate == carbohydrate && food.diaryFiber == diaryFiber)
+            } else {
+                false;
+            }
+        }
+        return false
+    }
+
+    override fun hashCode(): Int {
+        var result = name.hashCode()
+        result = 31 * result + power.hashCode()
+        result = 31 * result + protein.hashCode()
+        result = 31 * result + fat.hashCode()
+        result = 31 * result + carbohydrate.hashCode()
+        result = 31 * result + diaryFiber.hashCode()
+        return result
+    }
 }

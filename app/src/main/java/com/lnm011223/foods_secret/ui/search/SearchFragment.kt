@@ -10,8 +10,10 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import com.lnm011223.foods_secret.R
 import com.lnm011223.foods_secret.databinding.SearchFragmentBinding
+import com.lnm011223.foods_secret.logic.model.Food
 import com.lnm011223.foods_secret.logic.network.FoodService
 import com.lnm011223.foods_secret.logic.network.ServiceCreator
 import kotlinx.android.synthetic.main.search_fragment.*
@@ -19,6 +21,7 @@ import kotlinx.android.synthetic.main.search_fragment.*
 
 class SearchFragment : Fragment() {
     private lateinit var foodViewModel: FoodViewModel
+    private lateinit var foodEntity:Food
     private var _binding: SearchFragmentBinding? = null
 
     // This property is only valid between onCreateView and
@@ -55,8 +58,12 @@ class SearchFragment : Fragment() {
         binding.searchButton.setOnClickListener {
             searchInfo()
         }
-        // 【添加搭配】按钮
-        binding.addButton.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.nav_select, null))
+        // 【添加搭配】按钮,将数据发送给搭配页面
+        binding.addButton.setOnClickListener{
+            val bundle = Bundle()
+            bundle.putParcelable("food", foodEntity)
+            it.findNavController().navigate(R.id.nav_select, bundle)
+        }
 
         // 查看是否由食物分类功能跳转过来
         val foodName = arguments?.getString("foodName")
@@ -72,6 +79,7 @@ class SearchFragment : Fragment() {
             val food = result.getOrNull()
             // 设置界面信息
             if (food != null) {
+                foodEntity = food
                 view_fat.text = food.fat.toString()
                 view_power.text = food.power.toString()
                 view_protein.text = food.protein.toString()
@@ -82,7 +90,6 @@ class SearchFragment : Fragment() {
             }
         })
     }
-
 
     private fun searchInfo() {
         // 获取食物名称

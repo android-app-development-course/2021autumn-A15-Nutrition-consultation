@@ -7,7 +7,6 @@ import com.lnm011223.foods_secret.logic.network.Repository
 
 class FoodViewModel:ViewModel()  {
     private val foodNameLiveData = MutableLiveData<String>()
-    var foodName = "";
     val foodLiveData = Transformations.switchMap(foodNameLiveData) {
         foodName -> Repository.getFoodInfo(foodName)
     }

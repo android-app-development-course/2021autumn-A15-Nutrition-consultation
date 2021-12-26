@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.lnm011223.foods_secret.R
 import com.lnm011223.foods_secret.databinding.AnalyseFragmentBinding
+import com.lnm011223.foods_secret.logic.model.Food
 
 class AnalyseFragment : Fragment() {
 
@@ -28,12 +29,7 @@ class AnalyseFragment : Fragment() {
 
         _binding = AnalyseFragmentBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
-
         return root
-
-
-
     }
 
     override fun onDestroyView() {
@@ -43,8 +39,6 @@ class AnalyseFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
-
     }
 
 }
