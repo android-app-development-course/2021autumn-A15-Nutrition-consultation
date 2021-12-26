@@ -149,6 +149,7 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/view_carbohydrate"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="" />
@@ -168,6 +169,7 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/view_diaryFiber"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="" />

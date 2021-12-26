@@ -19,9 +19,16 @@ data class FoodResponse(val code:String, @SerializedName("newslist")val FoodInfo
 
 /**
  * 食物信息(部分)
+ * @param power 热量
+ * @param protein 蛋白质
+ * @param carbohydrate 碳水化合物
+ * @param fat 脂肪
+ * @param diaryFiber 膳食纤维
  */
 data class Food(val name:String="",
-                @SerializedName("rl")val power:Int=0,
+                @SerializedName("rl")val power:Float=0.0F,
                 @SerializedName("dbz")val protein:Float=0.0F,
-                @SerializedName("zf")val fat:Float=0.0F) {
+                @SerializedName("zf")val fat:Float=0.0F,
+                @SerializedName("shhf")val carbohydrate:Float=0.0F,
+                @SerializedName("ssxw")val diaryFiber:Float=0.0F) {
 }

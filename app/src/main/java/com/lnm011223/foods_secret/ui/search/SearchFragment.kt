@@ -71,12 +71,15 @@ class SearchFragment : Fragment() {
                     view_fat.text = food.fat.toString()
                     view_power.text = food.power.toString()
                     view_protein.text = food.protein.toString()
+                    view_carbohydrate.text = food.carbohydrate.toString()
+                    view_diaryFiber.text = food.diaryFiber.toString()
                 } else {
                     Toast.makeText(activity, "查询失败",Toast.LENGTH_SHORT).show()
                 }
             })
 
         }
+        // 【添加搭配】按钮
         binding.addButton.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.nav_select, null))
     }
 
