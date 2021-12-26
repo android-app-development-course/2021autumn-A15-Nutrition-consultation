@@ -20,7 +20,8 @@ object Repository {
                 Result.failure(RuntimeException("response status is ${foodResponse.code}"))
             }
         } catch (e: Exception) {
-            Result.failure<List<Food>>(e)
+           e.printStackTrace()
+            Result.failure<ArrayList<Food>>(e)
         }
         emit(result)
     }

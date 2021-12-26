@@ -23,11 +23,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/view_foodCategoryName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="52dp"
-                android:text="水果"
+                android:text="水果类"
                 android:textColor="#ECCE5F"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"

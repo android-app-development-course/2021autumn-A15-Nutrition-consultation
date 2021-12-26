@@ -15,7 +15,7 @@ import com.google.gson.annotations.SerializedName
  *     { }
  *  }
  */
-data class FoodResponse(val code:String, @SerializedName("newslist")val FoodInfoList:List<Food>)
+data class FoodResponse(val code:String, @SerializedName("newslist")val FoodInfoList:ArrayList<Food>)
 
 /**
  * 食物信息(部分)
