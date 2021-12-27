@@ -29,6 +29,7 @@ data class FoodResponse(val code:String, @SerializedName("newslist")val FoodInfo
  */
 @Parcelize
 data class Food(val name:String="",
+                var isSelected:Boolean=true,
                 @SerializedName("rl")val power:Float=0.0F,
                 @SerializedName("dbz")val protein:Float=0.0F,
                 @SerializedName("zf")val fat:Float=0.0F,

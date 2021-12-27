@@ -2,6 +2,7 @@ package com.lnm011223.foods_secret.ui.analyse
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,7 @@ import android.view.ViewGroup
 import com.lnm011223.foods_secret.R
 import com.lnm011223.foods_secret.databinding.AnalyseFragmentBinding
 import com.lnm011223.foods_secret.logic.model.Food
+import kotlinx.android.synthetic.main.search_fragment.*
 
 class AnalyseFragment : Fragment() {
 
@@ -39,6 +41,12 @@ class AnalyseFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+
+        // 获取选择的搭配
+        val foodList:ArrayList<Food> = arguments?.getSerializable("foodList") as ArrayList<Food>
+        for (food in foodList) {
+            Log.i("Test", food.toString());
+        }
     }
 
 }
