@@ -1,5 +1,6 @@
 package com.lnm011223.foods_secret.ui.detail
 
+import android.annotation.SuppressLint
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -39,6 +40,7 @@ class DetailFragment : Fragment() {
         _binding = null
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 //        initFruits() // 初始化水果数据
@@ -64,19 +66,6 @@ class DetailFragment : Fragment() {
         })
 
     }
-//    private fun initFruits() {
-//        repeat(2) {
-//            fruitList.add(Fruit("Apple", R.drawable.apple_pic))
-//            fruitList.add(Fruit("Banana", R.drawable.banana_pic))
-//            fruitList.add(Fruit("Orange", R.drawable.orange_pic))
-//            fruitList.add(Fruit("Watermelon", R.drawable.watermelon_pic))
-//            fruitList.add(Fruit("Pear", R.drawable.pear_pic))
-//            fruitList.add(Fruit("Grape", R.drawable.grape_pic))
-//            fruitList.add(Fruit("Pineapple", R.drawable.pineapple_pic))
-//            fruitList.add(Fruit("Strawberry", R.drawable.strawberry_pic))
-//            fruitList.add(Fruit("Cherry", R.drawable.cherry_pic))
-//            fruitList.add(Fruit("Mango", R.drawable.mango_pic))
-//        }
-//    }
+
 
 }

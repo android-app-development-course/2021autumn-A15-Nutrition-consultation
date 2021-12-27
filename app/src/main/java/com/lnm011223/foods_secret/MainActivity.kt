@@ -1,5 +1,6 @@
 package com.lnm011223.foods_secret
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Color
 import android.os.Build
@@ -23,6 +24,8 @@ import androidx.annotation.NonNull
 import androidx.core.view.GravityCompat
 import androidx.core.view.WindowCompat
 import androidx.drawerlayout.widget.DrawerLayout.DrawerListener
+import androidx.lifecycle.ViewModelStore
+import androidx.lifecycle.ViewModelStoreOwner
 import androidx.navigation.NavController
 
 
@@ -34,6 +37,7 @@ class MainActivity : AppCompatActivity() {
     // 用于全局获取这个Activity
     companion object {
         const val KEY = "6c658c0160d42b5f5e4807a3dadfee91"; // 请求api需要携带的参数
+        @SuppressLint("StaticFieldLeak")
         lateinit var context:Context
     }
 
