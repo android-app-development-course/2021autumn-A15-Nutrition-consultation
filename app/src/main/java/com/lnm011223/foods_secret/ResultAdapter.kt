@@ -39,7 +39,7 @@ class ResultAdapter (val resultList : List<GetResult>) : RecyclerView.Adapter<Re
 
         }
         holder.result_titletext.apply {
-            text = getResult.nourishment_name + ": ${getResult.nourishment_intake}"
+            text = getResult.nourishment_name + ": ${String.format("%.2f",getResult.nourishment_intake)}"
             setTextColor(parseColor(changecolor(getResult.nourishment_name)))
         }
         holder.result_bodytext.text = getResult.result_text

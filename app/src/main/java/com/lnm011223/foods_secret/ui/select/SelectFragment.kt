@@ -17,7 +17,7 @@ import com.lnm011223.foods_secret.databinding.SelectFragmentBinding
 import com.lnm011223.foods_secret.logic.model.Food
 
 
-class SelectFragment : Fragment() {
+class   SelectFragment : Fragment() {
     private lateinit var selectViewModel: SelectViewModel
     private var _binding: SelectFragmentBinding? = null
     private val selectList = ArrayList<Food>()
