@@ -47,6 +47,31 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
+            <TextView
+
+                android:id="@+id/search_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="搜索结果"
+                android:textColor="#0084f4"
+                android:textSize="24sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textField" />
+
+            <ImageView
+                android:id="@+id/search_imageview"
+                android:layout_width="150dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/button_drawable"
+                android:backgroundTint="#0084f4"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/search_textview" />
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/search_Button"
                 android:layout_width="64dp"
@@ -69,7 +94,7 @@
                 android:layout_height="wrap_content"
                 android:visibility="gone"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="144dp"
+                android:layout_marginTop="100dp"
 
                 android:orientation="vertical"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -86,13 +111,15 @@
                         android:layout_height="wrap_content"
                         android:text="热量："
                         android:textColor="#0084f4"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:textSize="18sp"/>
 
                     <TextView
                         android:id="@+id/view_power"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="" />
+                        android:text=""
+                        android:textSize="18sp"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -106,13 +133,15 @@
                         android:layout_height="wrap_content"
                         android:text="脂肪："
                         android:textColor="#0084f4"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:textSize="18sp"/>
 
                     <TextView
                         android:id="@+id/view_fat"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="" />
+                        android:text=""
+                        android:textSize="18sp"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -126,13 +155,15 @@
                         android:layout_height="wrap_content"
                         android:text="蛋白质："
                         android:textColor="#0084f4"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold"
+                        android:textSize="18sp"/>
 
                     <TextView
                         android:id="@+id/view_protein"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="" />
+                        android:text=""
+                        android:textSize="18sp"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -146,13 +177,15 @@
                         android:layout_height="wrap_content"
                         android:text="碳水化合物："
                         android:textColor="#0084f4"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:textSize="18sp"/>
 
                     <TextView
                         android:id="@+id/view_carbohydrate"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="" />
+                        android:text=""
+                        android:textSize="18sp"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -166,13 +199,15 @@
                         android:layout_height="wrap_content"
                         android:text="膳食纤维："
                         android:textColor="#0084f4"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:textSize="18sp"/>
 
                     <TextView
                         android:id="@+id/view_diaryFiber"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="" />
+                        android:text=""
+                        android:textSize="18sp"/>
                 </LinearLayout>
 
             </LinearLayout>
@@ -181,8 +216,8 @@
                 android:id="@+id/search_image"
                 android:layout_width="249dp"
                 android:layout_height="321dp"
-                android:layout_marginTop="136dp"
-                android:background="@drawable/ic_undraw_file_searching_re_3evy"
+                android:layout_marginTop="268dp"
+                android:src="@drawable/ic_undraw_file_searching_re_3evy"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.503"
                 app:layout_constraintStart_toStartOf="parent"
@@ -195,10 +230,10 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/add_button"
         android:layout_width="200dp"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:layout_marginBottom="16dp"
         android:backgroundTint="#0084f4"
-        android:text="添加"
+        android:text="添加食物"
         android:textSize="20sp"
         app:cornerRadius="100dp"
         app:icon="@drawable/ic_baseline_add_24"

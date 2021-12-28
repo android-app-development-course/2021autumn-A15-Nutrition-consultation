@@ -80,12 +80,23 @@ class SearchFragment : Fragment() {
             // 设置界面信息
             if (food != null) {
                 foodEntity = food
+                search_textview.text = food.name.toString()
                 view_fat.text = food.fat.toString()
                 view_power.text = food.power.toString()
                 view_protein.text = food.protein.toString()
                 view_carbohydrate.text = food.carbohydrate.toString()
                 view_diaryFiber.text = food.diaryFiber.toString()
+                binding.searchImage.setImageResource(R.drawable.undraw_job_offers_kw5d)
+                binding.addButton.visibility = View.VISIBLE
+                binding.textList.visibility = View.VISIBLE
+                binding.searchImageview.visibility = View.VISIBLE
+                binding.searchTextview.visibility = View.VISIBLE
             } else {
+                binding.searchImage.setImageResource(R.drawable.undraw_page_not_found_re_e9o6)
+                binding.addButton.visibility = View.GONE
+                binding.textList.visibility = View.GONE
+                binding.searchImageview.visibility = View.GONE
+                binding.searchTextview.visibility = View.GONE
                 Toast.makeText(activity, "查询失败",Toast.LENGTH_SHORT).show()
             }
         })
@@ -97,9 +108,13 @@ class SearchFragment : Fragment() {
         if (foodName.isNotEmpty()) {
             // 发起请求
             foodViewModel.getFoodInfo(foodName)
-            binding.searchImage.visibility = View.GONE
-            binding.addButton.visibility = View.VISIBLE
-            binding.textList.visibility = View.VISIBLE
+
+        }else{
+            binding.searchImage.setImageResource(R.drawable.ic_undraw_file_searching_re_3evy)
+            binding.addButton.visibility = View.GONE
+            binding.textList.visibility = View.GONE
+            binding.searchImageview.visibility = View.GONE
+            binding.searchTextview.visibility = View.GONE
         }
     }
 

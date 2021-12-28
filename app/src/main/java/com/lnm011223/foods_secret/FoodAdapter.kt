@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.lnm011223.foods_secret.logic.model.Food
@@ -14,12 +13,12 @@ import com.lnm011223.foods_secret.logic.model.Food
 class FoodAdapter(val foodList: List<Food>) : RecyclerView.Adapter<FoodAdapter.ViewHolder>() {
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val fruitImage: ImageView = view.findViewById(R.id.fruitImage)
+        val foodImage: ImageView = view.findViewById(R.id.foodImage)
         val foodName: TextView = view.findViewById(R.id.foodName)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.fruit_item, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.food_item, parent, false)
         val viewHolder = ViewHolder(view)
 
 
@@ -29,7 +28,7 @@ class FoodAdapter(val foodList: List<Food>) : RecyclerView.Adapter<FoodAdapter.V
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val food = foodList[position]
         // 使用默认图片
-        holder.fruitImage.setImageResource(R.drawable.apple_pic)
+        holder.foodImage.setImageResource(R.drawable.select_image)
         holder.foodName.text = food.name
         holder.itemView.setOnClickListener {
 

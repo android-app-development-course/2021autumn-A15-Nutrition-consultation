@@ -44,6 +44,8 @@ class DetailFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 //        initFruits() // 初始化水果数据
+        val tagname = arguments?.getString("tagname")
+        binding.viewFoodCategoryName.text = tagname
         val layoutManager = StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL)
         binding.recyclerView.layoutManager = layoutManager
         val adapter = FoodAdapter(foodList)

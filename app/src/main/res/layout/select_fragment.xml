@@ -77,7 +77,7 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/analyse_button"
         android:layout_width="200dp"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:layout_marginBottom="16dp"
         android:backgroundTint="#EB8C8F"
         android:text="分析搭配"
