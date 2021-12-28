@@ -7,13 +7,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import com.lnm011223.foods_secret.R
 import com.lnm011223.foods_secret.databinding.AnalyseFragmentBinding
 import com.lnm011223.foods_secret.logic.model.Food
 import kotlinx.android.synthetic.main.search_fragment.*
 
-@Suppress("UNCHECKED_CAST")
 class AnalyseFragment : Fragment() {
 
     private lateinit var analyseViewModel: AnalyseViewModel
@@ -63,4 +61,5 @@ class AnalyseFragment : Fragment() {
     private fun analyze() {
 
     }
+
 }

@@ -61,7 +61,7 @@ class TagFragment : Fragment() {
         tagNameList.add(Tag("禽肉类",R.drawable.qinrou))
         tagNameList.add(Tag("乳类",R.drawable.rulei))
         tagNameList.add(Tag("蛋类",R.drawable.dan))
-        tagNameList.add(Tag("鱼虾蟹贝类",R.drawable.yuxia))
+        tagNameList.add(Tag("鱼虾蟹贝",R.drawable.yuxia))
         tagNameList.add(Tag("油脂类",R.drawable.youzhi))
         tagNameList.add(Tag("薯类淀粉",R.drawable.shulei))
         tagNameList.add(Tag("坚果种子",R.drawable.jianguo))

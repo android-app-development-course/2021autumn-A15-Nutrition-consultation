@@ -26,12 +26,11 @@ data class FoodResponse(val code:String, @SerializedName("newslist")val FoodInfo
  * @param carbohydrate 碳水化合物
  * @param fat 脂肪
  * @param diaryFiber 膳食纤维
- * @param intakeAmount 摄入量（克），默认100
  */
 @Parcelize
 data class Food(val name:String="",
                 var isSelected:Boolean=true,
-                val intakeAmount:Int = 100,
+                var intakeAmount:Int = 100,
                 @SerializedName("rl") var power:Float=0.0F,
                 @SerializedName("dbz")val protein:Float=0.0F,
                 @SerializedName("zf") var fat:Float=0.0F,

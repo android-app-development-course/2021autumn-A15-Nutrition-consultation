@@ -31,4 +31,9 @@
         <item name="colorControlHighlight">#90CAF9</item>
 
     </style>
+    <style name="MyEditText" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">#EB8C8F</item>
+        <item name="colorControlActivated">#EB8C8F</item>
+    </style>
+
 </resources>
