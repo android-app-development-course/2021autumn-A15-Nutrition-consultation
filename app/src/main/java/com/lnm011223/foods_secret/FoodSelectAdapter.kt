@@ -28,10 +28,14 @@ class FoodSelectAdapter (val foodselectList: List<Food>) : RecyclerView.Adapter<
         holder.checkBox.text = food.name
 
         holder.checkBox.isChecked = food.isSelected
+        holder.foodnum_edit.setText(food.intakeAmount.toString())
 //        holder.checkBox.isChecked = food.isSelected
         holder.foodnum_edit.addTextChangedListener {
-            food.intakeAmount = holder.foodnum_edit.text.toString().toInt()
-            Log.d("foodnum",food.intakeAmount.toString())
+            if (holder.foodnum_edit.text.isNotEmpty()){
+                food.intakeAmount = holder.foodnum_edit.text.toString().toInt()
+                Log.d("foodnum",food.intakeAmount.toString())
+            }
+
         }
 
         holder.checkBox.setOnClickListener {
