@@ -25,6 +25,7 @@
     <style name="ThemeOverlay.AppCompat.navTheme">
 
         <!-- Color of text and icon when SELECTED -->
+
         <item name="colorPrimary">#0084f4</item>
 
         <!-- Background color when SELECTED -->

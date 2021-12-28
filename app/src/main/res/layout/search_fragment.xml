@@ -84,6 +84,7 @@
                 app:cornerRadius="0dp"
                 app:elevation="0dp"
                 app:icon="@drawable/ic_fluentsearch16filled"
+                app:iconSize="32dp"
                 app:iconTint="#0084f4"
                 app:layout_constraintEnd_toEndOf="parent"
                 tools:layout_editor_absoluteY="0dp" />

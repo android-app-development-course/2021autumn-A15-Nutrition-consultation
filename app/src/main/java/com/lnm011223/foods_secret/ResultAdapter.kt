@@ -34,7 +34,7 @@ class ResultAdapter (val resultList : List<GetResult>) : RecyclerView.Adapter<Re
         holder.left_image.setBackgroundColor(parseColor(changecolor(getResult.nourishment_name)))
         holder.result_card.apply {
 
-            //setBackgroundColor(changecolor1(getResult.nourishment_name))
+
             setCardBackgroundColor(changecolor1(getResult.nourishment_name))
 
         }
@@ -45,20 +45,20 @@ class ResultAdapter (val resultList : List<GetResult>) : RecyclerView.Adapter<Re
         holder.result_bodytext.text = getResult.result_text
     }
     override fun getItemCount() = resultList.size
-    private fun changecolor( name: String) : String = when {
-        name == "热量" -> "#E57373"
-        name == "脂肪" -> "#BA68C8"
-        name == "蛋白质" -> "#7986CB"
-        name == "碳水化合物" -> "#64B5F6"
-        name == "膳食纤维" -> "#81C784"
+    private fun changecolor( name: String) : String = when (name) {
+        "热量" -> "#E57373"
+        "脂肪" -> "#BA68C8"
+        "蛋白质" -> "#7986CB"
+        "碳水化合物" -> "#64B5F6"
+        "膳食纤维" -> "#81C784"
         else -> "#FF8A65"
     }
-    private fun changecolor1( name: String) : Int = when {
-        name == "热量" -> parseColor("#FFEBEE")
-        name == "脂肪" -> parseColor("#EDE7F6")
-        name == "蛋白质" -> parseColor("#E8EAF6")
-        name == "碳水化合物" -> parseColor("#E3F2FD")
-        name == "膳食纤维" -> parseColor("#F1F8E9")
+    private fun changecolor1( name: String) : Int = when (name) {
+        "热量" -> parseColor("#FFEBEE")
+        "脂肪" -> parseColor("#EDE7F6")
+        "蛋白质" -> parseColor("#E8EAF6")
+        "碳水化合物" -> parseColor("#E3F2FD")
+        "膳食纤维" -> parseColor("#F1F8E9")
         else -> parseColor("#FF8A65")
     }
 }

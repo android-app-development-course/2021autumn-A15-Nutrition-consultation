@@ -1,21 +1,19 @@
 package com.lnm011223.foods_secret
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Context
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.view.WindowManager
 import android.widget.Toolbar
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.lnm011223.foods_secret.databinding.ActivityMainBinding
@@ -27,6 +25,10 @@ import androidx.drawerlayout.widget.DrawerLayout.DrawerListener
 import androidx.lifecycle.ViewModelStore
 import androidx.lifecycle.ViewModelStoreOwner
 import androidx.navigation.NavController
+import androidx.navigation.ui.*
+import com.lnm011223.foods_secret.R.color.iconcolor
+import kotlinx.android.synthetic.main.app_bar_main.*
+import kotlinx.android.synthetic.main.nav_header_main.view.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -34,11 +36,15 @@ class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
 
+
     // 用于全局获取这个Activity
     companion object {
         const val KEY = "6c658c0160d42b5f5e4807a3dadfee91"; // 请求api需要携带的参数
         @SuppressLint("StaticFieldLeak")
         lateinit var context:Context
+
+
+
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -63,13 +69,14 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
+
         appbarcolor(navController)
         val insetsController = WindowCompat.getInsetsController(
             window, window.decorView
         )
         window.navigationBarColor = Color.WHITE
         insetsController?.apply { isAppearanceLightNavigationBars = true }
-
+        //val header = navView.inflateHeaderView(R.layout.nav_header_main)
 
 
 
@@ -107,22 +114,38 @@ class MainActivity : AppCompatActivity() {
         return true
     }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        return item.onNavDestinationSelected(findNavController(R.id.nav_host_fragment_content_main))
+                || super.onOptionsItemSelected(item)
+    }
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
+    @SuppressLint("ResourceAsColor")
     fun appbarcolor(navController:NavController){//用于改变actionbar和statusbar颜色
+        val header = binding.navView.getHeaderView(0).findViewById<View>(R.id.draw_header)
+
         navController.addOnDestinationChangedListener { _, destination, _ -> when(destination.id){
             R.id.nav_home -> {binding.appBarMain.toolbar.setBackgroundColor(Color.parseColor("#00c48c"))
-                window.statusBarColor = Color.parseColor("#00c48c")}
+                header.setBackgroundColor(Color.parseColor("#00c48c"))
+                window.statusBarColor = Color.parseColor("#00c48c")
+
+            }
             R.id.nav_search -> {binding.appBarMain.toolbar.setBackgroundColor(Color.parseColor("#0084f4"))
+                header.setBackgroundColor(Color.parseColor("#0084f4"))
                     window.statusBarColor = Color.parseColor("#0084f4")}
             R.id.nav_select -> {binding.appBarMain.toolbar.setBackgroundColor(Color.parseColor("#EB8C8F"))
+                header.setBackgroundColor(Color.parseColor("#EB8C8F"))
                     window.statusBarColor = Color.parseColor("#EB8C8F")}
             R.id.nav_tag -> {binding.appBarMain.toolbar.setBackgroundColor(Color.parseColor("#ECCE5F"))
+                header.setBackgroundColor(Color.parseColor("#ECCE5F"))
                     window.statusBarColor = Color.parseColor("#ECCE5F")}
             R.id.nav_about -> {binding.appBarMain.toolbar.setBackgroundColor(Color.parseColor("#ffa26b"))
-                    window.statusBarColor = Color.parseColor("#ffa26b")}
+                header.setBackgroundColor(Color.parseColor("#ffa26b"))
+                    window.statusBarColor = Color.parseColor("#ffa26b")
+            }
         }
 
         }

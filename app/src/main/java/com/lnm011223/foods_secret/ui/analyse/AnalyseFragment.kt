@@ -12,6 +12,7 @@ import com.lnm011223.foods_secret.ResultAdapter
 import com.lnm011223.foods_secret.databinding.AnalyseFragmentBinding
 import com.lnm011223.foods_secret.logic.model.Food
 import com.lnm011223.foods_secret.logic.model.GetResult
+import kotlinx.android.synthetic.main.analyse_fragment.*
 import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.collections.HashMap
@@ -73,6 +74,8 @@ class AnalyseFragment : Fragment() {
         val adapter = ResultAdapter(resultList)
         binding.resultView.adapter = adapter
         analyze()
+        day_text.text = getCurrentMealTime()
+
 
     }
 
@@ -92,7 +95,7 @@ class AnalyseFragment : Fragment() {
      * @return 午饭、晚饭、早饭
      */
     private fun getCurrentMealTime():String{
-        return when (Calendar.getInstance().get(Calendar.HOUR)) {
+        return when (Calendar.getInstance().get(Calendar.HOUR_OF_DAY)) {
             in 5..10 -> {
                 "早饭"
             }
@@ -100,6 +103,7 @@ class AnalyseFragment : Fragment() {
                 "午饭"
             }
             in 17..22 -> {
+
                 "晚饭"
             }
             else -> {
@@ -113,9 +117,17 @@ class AnalyseFragment : Fragment() {
      * 参考标准表获取评价
      */
     private fun getAnalyzeResult(nutritionName:String, value:Float):String {
-        val standardValue: Float? = nutritionComparisonMap[nutritionName]
+        var standardValue: Float? = nutritionComparisonMap[nutritionName]
+        standardValue = when(getCurrentMealTime()) {
+            "晚饭" -> standardValue?.times(0.3.toFloat())
+            "早饭" -> standardValue?.times(0.3.toFloat())
+            "午饭" -> standardValue?.times(0.4.toFloat())
+            else -> standardValue?.times(0.3.toFloat())
+
+        }
         when {
-            value < 0.2 * standardValue!! -> {
+            value < 0.2* standardValue!! -> {
+                Log.d("1111",standardValue.toString())
                 return "急需摄入";
             }
             value <0.5*standardValue -> {
@@ -138,5 +150,6 @@ class AnalyseFragment : Fragment() {
             }
         }
     }
+
 
 }
