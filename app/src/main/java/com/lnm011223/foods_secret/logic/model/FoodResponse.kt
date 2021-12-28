@@ -32,7 +32,7 @@ data class Food(val name:String="",
                 var isSelected:Boolean=true,
                 var intakeAmount:Int = 100,
                 @SerializedName("rl") var power:Float=0.0F,
-                @SerializedName("dbz")val protein:Float=0.0F,
+                @SerializedName("dbz") var protein:Float=0.0F,
                 @SerializedName("zf") var fat:Float=0.0F,
                 @SerializedName("shhf") var carbohydrate:Float=0.0F,
                 @SerializedName("ssxw") var diaryFiber:Float=0.0F):Parcelable {
@@ -59,3 +59,4 @@ data class Food(val name:String="",
         return result
     }
 }
+data class GetResult(val nourishment_name : String,val nourishment_intake : Float,val result_text : String)

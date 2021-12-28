@@ -7,9 +7,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.lnm011223.foods_secret.FoodSelectAdapter
 import com.lnm011223.foods_secret.R
+import com.lnm011223.foods_secret.ResultAdapter
 import com.lnm011223.foods_secret.databinding.AnalyseFragmentBinding
 import com.lnm011223.foods_secret.logic.model.Food
+import com.lnm011223.foods_secret.logic.model.GetResult
 import kotlinx.android.synthetic.main.search_fragment.*
 
 class AnalyseFragment : Fragment() {
@@ -17,6 +21,7 @@ class AnalyseFragment : Fragment() {
     private lateinit var analyseViewModel: AnalyseViewModel
     private var _binding: AnalyseFragmentBinding? = null
     private lateinit var totalFood:Food
+    private val resultList = ArrayList<GetResult>()
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
@@ -53,12 +58,25 @@ class AnalyseFragment : Fragment() {
             totalFood.diaryFiber += intake * food.diaryFiber
             totalFood.fat += intake * food.fat
             totalFood.power += intake * food.power
+            totalFood.protein += intake * food.protein
         }
-        Log.i("TEST", "onActivityCreated: 总的摄入量$totalFood");
+        Log.i("TEST", "onActivityCreated: 总的摄入量$totalFood")
+        val layoutManager = StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL)
+        binding.resultView.layoutManager = layoutManager
+        val adapter = ResultAdapter(resultList)
+        binding.resultView.adapter = adapter
+        analyze()
+
     }
 
     // 分析
     private fun analyze() {
+        resultList.clear()
+        resultList.add(GetResult("热量",totalFood.power,""))
+        resultList.add(GetResult("脂肪",totalFood.fat,""))
+        resultList.add(GetResult("蛋白质",totalFood.protein,""))
+        resultList.add(GetResult("碳水化合物",totalFood.carbohydrate,""))
+        resultList.add(GetResult("膳食纤维",totalFood.diaryFiber,""))
 
     }
 
