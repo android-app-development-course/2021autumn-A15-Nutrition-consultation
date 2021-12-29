@@ -84,11 +84,10 @@ class AnalyseFragment : Fragment() {
         resultList.clear()
         // 分析逻辑
         resultList.add(GetResult("热量",totalFood.power,getAnalyzeResult("power",totalFood.power)))
-        resultList.add(GetResult("脂肪",totalFood.fat,getAnalyzeResult("fat",totalFood.fat)))
-        resultList.add(GetResult("蛋白质",totalFood.protein,getAnalyzeResult("protein",totalFood.protein)))
         resultList.add(GetResult("碳水化合物",totalFood.carbohydrate,getAnalyzeResult("carbohydrate",totalFood.carbohydrate)))
+        resultList.add(GetResult("蛋白质",totalFood.protein,getAnalyzeResult("protein",totalFood.protein)))
         resultList.add(GetResult("膳食纤维",totalFood.diaryFiber,getAnalyzeResult("diaryFiber",totalFood.diaryFiber)))
-
+        resultList.add(GetResult("脂肪",totalFood.fat,getAnalyzeResult("fat",totalFood.fat)))
     }
 
     /** 获取当前时间段对应的饭点
