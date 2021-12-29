@@ -1,16 +1,20 @@
 package com.lnm011223.foods_secret.ui.detail
 
 import android.annotation.SuppressLint
+import android.graphics.Color
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.livedata.core.ktx.R
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.lnm011223.foods_secret.FoodAdapter
 import com.lnm011223.foods_secret.databinding.DetailFragmentBinding
 import com.lnm011223.foods_secret.logic.model.Food
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.app_bar_main.view.*
 import kotlinx.android.synthetic.main.detail_fragment.*
 
 class DetailFragment : Fragment() {
@@ -66,6 +70,12 @@ class DetailFragment : Fragment() {
                 adapter.notifyDataSetChanged()
             }
         })
+
+        activity?.apply {
+            app_bar_main?.toolbar?.setBackgroundColor(Color.parseColor("#ECCE5F"))
+            window.statusBarColor = Color.parseColor("#ECCE5F")
+        }
+
 
     }
 

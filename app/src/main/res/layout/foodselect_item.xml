@@ -37,6 +37,9 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:text="g"
+        android:gravity="bottom"
+
+        android:textStyle="bold"
         android:textColor="#EB8C8F"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
