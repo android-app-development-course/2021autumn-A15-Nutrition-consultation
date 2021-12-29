@@ -19,7 +19,7 @@ interface FoodService {
      * @param page：分页
      */
     @GET("nutrient/index?key=${MainActivity.KEY}&mode=1")
-    fun searchFoods(@Query("word")foodCategoryName:String, @Query("num")num:Int=20, @Query("page")page:Int=1) :Call<FoodResponse>
+    fun searchFoods(@Query("word")foodCategoryName:String, @Query("page")page:Int=1, @Query("num")num:Int=20) :Call<FoodResponse>
 
     /**
      * 根据食物名称获取食物信息

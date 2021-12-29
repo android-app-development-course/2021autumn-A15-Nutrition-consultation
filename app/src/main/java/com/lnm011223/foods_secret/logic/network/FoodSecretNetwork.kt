@@ -17,7 +17,7 @@ object FoodSecretNetwork {
     private val foodService = ServiceCreator.create<FoodService>()
 
     // 声明为挂起函数，调用FoodService的方法
-    suspend fun searchFoods(foodCategoryName:String) = foodService.searchFoods(foodCategoryName).await()
+    suspend fun searchFoods(foodCategoryName:String, page:Int) = foodService.searchFoods(foodCategoryName, page).await()
 
     suspend fun getFoodInfo(foodName:String) = foodService.getSearchInfo(foodName).await()
 

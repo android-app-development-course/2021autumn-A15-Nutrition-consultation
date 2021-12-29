@@ -10,9 +10,9 @@ import kotlinx.coroutines.Dispatchers
  */
 object Repository {
     //
-    fun searchFoods(foodCategoryName: String) = liveData(Dispatchers.IO) {
+    fun searchFoods(foodCategoryName: String, page:Int) = liveData(Dispatchers.IO) {
         val result = try {
-            val foodResponse = FoodSecretNetwork.searchFoods(foodCategoryName)
+            val foodResponse = FoodSecretNetwork.searchFoods(foodCategoryName, page)
             if (foodResponse.code == "200") {
                 val foods = foodResponse.FoodInfoList
                 Result.success(foods)
@@ -20,7 +20,7 @@ object Repository {
                 Result.failure(RuntimeException("response status is ${foodResponse.code}"))
             }
         } catch (e: Exception) {
-           e.printStackTrace()
+            e.printStackTrace()
             Result.failure<ArrayList<Food>>(e)
         }
         emit(result)

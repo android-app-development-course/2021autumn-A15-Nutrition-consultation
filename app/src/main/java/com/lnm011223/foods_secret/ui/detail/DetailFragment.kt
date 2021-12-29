@@ -17,6 +17,9 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.view.*
 import kotlinx.android.synthetic.main.detail_fragment.*
 
+/**
+ * 某个分类下的食物列表页
+ */
 class DetailFragment : Fragment() {
 
     private lateinit var detailViewModel: DetailViewModel
@@ -58,7 +61,7 @@ class DetailFragment : Fragment() {
         val foodCategoryName = view_foodCategoryName.text.toString()
         if (foodCategoryName.isNotEmpty()) {
             // 发起请求获取食物列表
-            detailViewModel.getFoodList(foodCategoryName)
+            detailViewModel.getFoodList(foodCategoryName, 2)
         }
         // 查看请求响应
         detailViewModel.foodListLiveData.observe(viewLifecycleOwner, {

@@ -1,18 +1,20 @@
 package com.lnm011223.foods_secret.ui.detail
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
-import com.lnm011223.foods_secret.logic.model.Food
+import com.lnm011223.foods_secret.logic.model.FoodRequest
 import com.lnm011223.foods_secret.logic.network.Repository
 
 class DetailViewModel : ViewModel() {
-    private val foodCategoryNameLiveData = MutableLiveData<String>()
-    val foodListLiveData = Transformations.switchMap(foodCategoryNameLiveData) {
-            foodCategoryName -> Repository.searchFoods(foodCategoryName)
+    private val requestParam = MutableLiveData<FoodRequest>()
+    val foodListLiveData = Transformations.switchMap(requestParam) {
+        param -> Repository.searchFoods(param.categoryName, param.page)
     }
 
-    fun getFoodList(foodCategoryName: String){
-        foodCategoryNameLiveData.value = foodCategoryName
+    fun getFoodList(foodCategoryName: String, page:Int){
+        requestParam.value =FoodRequest(foodCategoryName, page)
     }
+
 }
