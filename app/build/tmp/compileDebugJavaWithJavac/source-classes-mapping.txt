@@ -1,0 +1,32 @@
+com/lnm011223/foods_secret/databinding/FragmentHomeBinding.java
+ com.lnm011223.foods_secret.databinding.FragmentHomeBinding
+com/lnm011223/foods_secret/databinding/TagFragmentBinding.java
+ com.lnm011223.foods_secret.databinding.TagFragmentBinding
+com/lnm011223/foods_secret/databinding/NavHeaderMainBinding.java
+ com.lnm011223.foods_secret.databinding.NavHeaderMainBinding
+com/lnm011223/foods_secret/databinding/FoodItemBinding.java
+ com.lnm011223.foods_secret.databinding.FoodItemBinding
+com/lnm011223/foods_secret/databinding/AboutFragmentBinding.java
+ com.lnm011223.foods_secret.databinding.AboutFragmentBinding
+com/lnm011223/foods_secret/databinding/DetailFragmentBinding.java
+ com.lnm011223.foods_secret.databinding.DetailFragmentBinding
+com/lnm011223/foods_secret/databinding/SearchFragmentBinding.java
+ com.lnm011223.foods_secret.databinding.SearchFragmentBinding
+com/lnm011223/foods_secret/databinding/ContentMainBinding.java
+ com.lnm011223.foods_secret.databinding.ContentMainBinding
+com/lnm011223/foods_secret/databinding/TagItemBinding.java
+ com.lnm011223.foods_secret.databinding.TagItemBinding
+com/lnm011223/foods_secret/databinding/SelectFragmentBinding.java
+ com.lnm011223.foods_secret.databinding.SelectFragmentBinding
+com/lnm011223/foods_secret/databinding/ActivityMainBinding.java
+ com.lnm011223.foods_secret.databinding.ActivityMainBinding
+com/lnm011223/foods_secret/databinding/AnalyseFragmentBinding.java
+ com.lnm011223.foods_secret.databinding.AnalyseFragmentBinding
+com/lnm011223/foods_secret/BuildConfig.java
+ com.lnm011223.foods_secret.BuildConfig
+com/lnm011223/foods_secret/databinding/ResultItemBinding.java
+ com.lnm011223.foods_secret.databinding.ResultItemBinding
+com/lnm011223/foods_secret/databinding/AppBarMainBinding.java
+ com.lnm011223.foods_secret.databinding.AppBarMainBinding
+com/lnm011223/foods_secret/databinding/FoodselectItemBinding.java
+ com.lnm011223.foods_secret.databinding.FoodselectItemBinding

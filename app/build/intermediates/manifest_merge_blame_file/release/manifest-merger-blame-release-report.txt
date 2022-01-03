@@ -1,0 +1,57 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.lnm011223.foods_secret"
+4    android:versionCode="1"
+5    android:versionName="1.1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->/Users/liangnuoming/qiafan/2021autumn-A15-Nutrition-consultation/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="31" />
+9-->/Users/liangnuoming/qiafan/2021autumn-A15-Nutrition-consultation/app/src/main/AndroidManifest.xml
+10
+11    <!-- 获取网络权限 -->
+12    <uses-permission android:name="android.permission.INTERNET" />
+12-->/Users/liangnuoming/qiafan/2021autumn-A15-Nutrition-consultation/app/src/main/AndroidManifest.xml:7:5-67
+12-->/Users/liangnuoming/qiafan/2021autumn-A15-Nutrition-consultation/app/src/main/AndroidManifest.xml:7:22-64
+13
+14    <application
+14-->/Users/liangnuoming/qiafan/2021autumn-A15-Nutrition-consultation/app/src/main/AndroidManifest.xml:9:5-27:19
+15        android:allowBackup="true"
+15-->/Users/liangnuoming/qiafan/2021autumn-A15-Nutrition-consultation/app/src/main/AndroidManifest.xml:10:9-35
+16        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+16-->[androidx.core:core:1.6.0] /Users/liangnuoming/.gradle/caches/transforms-3/72553cd2e85cab90e4dd54463e13b3a1/transformed/core-1.6.0/AndroidManifest.xml:24:18-86
+17        android:icon="@mipmap/ic_launcher"
+17-->/Users/liangnuoming/qiafan/2021autumn-A15-Nutrition-consultation/app/src/main/AndroidManifest.xml:11:9-43
+18        android:label="@string/app_name"
+18-->/Users/liangnuoming/qiafan/2021autumn-A15-Nutrition-consultation/app/src/main/AndroidManifest.xml:12:9-41
+19        android:roundIcon="@mipmap/ic_launcher_round"
+19-->/Users/liangnuoming/qiafan/2021autumn-A15-Nutrition-consultation/app/src/main/AndroidManifest.xml:13:9-54
+20        android:supportsRtl="true"
+20-->/Users/liangnuoming/qiafan/2021autumn-A15-Nutrition-consultation/app/src/main/AndroidManifest.xml:14:9-35
+21        android:theme="@style/Theme.Foods_secret" >
+21-->/Users/liangnuoming/qiafan/2021autumn-A15-Nutrition-consultation/app/src/main/AndroidManifest.xml:15:9-50
+22        <activity
+22-->/Users/liangnuoming/qiafan/2021autumn-A15-Nutrition-consultation/app/src/main/AndroidManifest.xml:16:9-26:20
+23            android:name="com.lnm011223.foods_secret.MainActivity"
+23-->/Users/liangnuoming/qiafan/2021autumn-A15-Nutrition-consultation/app/src/main/AndroidManifest.xml:17:13-41
+24            android:exported="true"
+24-->/Users/liangnuoming/qiafan/2021autumn-A15-Nutrition-consultation/app/src/main/AndroidManifest.xml:18:13-36
+25            android:label="@string/app_name"
+25-->/Users/liangnuoming/qiafan/2021autumn-A15-Nutrition-consultation/app/src/main/AndroidManifest.xml:19:13-45
+26            android:theme="@style/Theme.Foods_secret.NoActionBar" >
+26-->/Users/liangnuoming/qiafan/2021autumn-A15-Nutrition-consultation/app/src/main/AndroidManifest.xml:20:13-66
+27            <intent-filter>
+27-->/Users/liangnuoming/qiafan/2021autumn-A15-Nutrition-consultation/app/src/main/AndroidManifest.xml:21:13-25:29
+28                <action android:name="android.intent.action.MAIN" />
+28-->/Users/liangnuoming/qiafan/2021autumn-A15-Nutrition-consultation/app/src/main/AndroidManifest.xml:22:17-69
+28-->/Users/liangnuoming/qiafan/2021autumn-A15-Nutrition-consultation/app/src/main/AndroidManifest.xml:22:25-66
+29
+30                <category android:name="android.intent.category.LAUNCHER" />
+30-->/Users/liangnuoming/qiafan/2021autumn-A15-Nutrition-consultation/app/src/main/AndroidManifest.xml:24:17-77
+30-->/Users/liangnuoming/qiafan/2021autumn-A15-Nutrition-consultation/app/src/main/AndroidManifest.xml:24:27-74
+31            </intent-filter>
+32        </activity>
+33    </application>
+34
+35</manifest>
