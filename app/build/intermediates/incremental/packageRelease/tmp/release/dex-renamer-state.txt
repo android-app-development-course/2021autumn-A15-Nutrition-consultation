@@ -1,4 +1,0 @@
-#Wed Dec 29 14:45:43 CST 2021
-base.0=/Users/liangnuoming/qiafan/2021autumn-A15-Nutrition-consultation/app/build/intermediates/dex/release/mergeDexRelease/classes.dex
-renamed.0=classes.dex
-path.0=classes.dex
